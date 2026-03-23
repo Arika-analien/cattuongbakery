@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@300&display=swap' );
+  img{
+    width: 100%;
+    margin-bottom: 2px;
+    padding: 4px;
+}
+*{
+    background-color: rgb(251, 243, 206);
+}
+.product {
+    columns: 300px;
+}
+.title h1 {
+    color: rgb(77, 37, 11);
+    font-family: 'Playwrite HU';
+}
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
