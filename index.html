@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cát Tường Bakery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Glory:wght@400;600;700;800&family=Playwrite+HU:wght@300&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b97b4520c7.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════ -->
+<header>
+  <div class="top-bar">
+    <div class="phonenumber">
+      <i class="fa-solid fa-cookie"></i>
+      <p>Hotline: 0785266428</p>
+    </div>
+    <div class="logo">
+      <img src="images/cat_tuong_logo-removebg.png" alt="Cát Tường Bakery" />
+    </div>
+    <div class="social-media">
+      <a href="https://www.facebook.com/bakerycattuong" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+  <nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="categories" id="navLinks">
+      <li><a href="#about">About us</a></li>
+      <li><a href="pages/product_test_.html">Sản phẩm</a></li>
+      <li><a href="pages/coming-soon.html?page=tintuc">Blog</a></li>
+      <li><a href="pages/coming-soon.html?page=quatang">Quà tặng</a></li>
+      <li><a href="#footer">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="introduce" id="home">
+  <div class="slogan">
+    <img src="images/cover-2.0.jpg" alt="Cát Tường Bakery" />
+    <div class="intro">
+      <h1>Homemade Bakery<br><em>Since 2024</em></h1>
+      <div class="intro-divider">
+        <span></span><i class="fa-solid fa-wheat-awn"></i><span></span>
+      </div>
+      <h3>Tiệm bánh thủ công Cát Tường</h3>
+      <div class="intro-actions">
+        <a href="#bestseller" class="btn btn-gold">Xem sản phẩm</a>
+        <a href="#ordering"   class="btn btn-outline-hero">Đặt hàng ngay</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     ABOUT US
+════════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="section-tag">Về chúng tôi</div>
+      <h2>Làm bánh bằng <em>tình yêu</em><br>và nguyên liệu tươi mỗi ngày</h2>
+      <p>Cát Tường Bakery ra đời từ một góc bếp nhỏ ấm cúng, nơi mỗi chiếc bánh được tạo nên với tất cả sự tâm huyết và tình yêu của gia đình. Chúng tôi tin rằng hương vị bánh ngon nhất không đến từ nhà máy — mà từ bàn tay người làm và trái tim yêu thương.</p>
+      <p>Mỗi sản phẩm tại Cát Tường được làm từ nguyên liệu tươi, chọn lọc kỹ càng, tối giản màu sắc, hương liệu nhân tạo cũng như không thêm vào chất bảo quản, chất ổn định, chất phụ gia trong quá trình sản xuất. Từ bông lan trứng muối mềm tan đến những chiếc bánh quy giòn rụm — đây là hương vị của nhà.</p>
+      <p class="signature">— Gia đình Cát Tường 🌸</p>
+      <a href="pages/product_test_.html" class="btn btn-brown" style="margin-top:2rem;display:inline-flex">
+        Khám phá sản phẩm &nbsp;<i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+    <div class="about-image">
+      <div class="about-img-wrap">
+        <img src="images/tira-cover.jpg" alt="Tiệm bánh Cát Tường" />
+      </div>
+      <div class="about-badge">
+        <strong>2024</strong><span>Thành<br>lập</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     HÔM NAY ĂN GÌ? — Random Generator
+════════════════════════════════════════════ -->
+<section class="food-picker" id="food-picker">
+  <div class="food-picker-inner">
+
+    <div class="section-tag" style="justify-content:center">Gợi ý của tiệm</div>
+    <h2 class="food-picker-title">Hôm nay ăn gì? </h2>
+    <p class="food-picker-sub">Thử vận may của bạn!</p>
+
+    <div class="picker-display" id="pickerDisplay">
+      <div class="picker-emoji" id="pickerEmoji">🍞</div>
+      <div class="picker-result" id="pickerResult">Nhấn để xem gợi ý!</div>
+    </div>
+
+    <button class="picker-btn" id="pickerBtn" onclick="pickFood()">
+      <i class="fa-solid fa-dice" id="pickerIcon"></i>
+      <span>Xem thử</span>
+    </button>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     BESTSELLERS CAROUSEL
+════════════════════════════════════════════ -->
+<section class="bestseller next" id="bestseller">
+
+  <div class="bestseller-header">
+    <h2 class="bestseller-title">— Sản phẩm bán chạy nhất —</h2>
+  </div>
+
+  <div class="list">
+    <article class="item other_1">
+      <div class="main-content" style="background-color:#c07451;">
+        <div class="content">
+          <h2>Tiramisu</h2>
+          <p>Tiramisu luôn nằm trong danh sách được đặt nhiều nhất tại Cát Tường Bakery nhờ hương vị dễ ăn, không gây ngấy. Bánh là sự kết hợp đơn giản giữa lớp kem béo mịn và cốt bánh thấm cà phê. Bạn sẽ cảm nhận được kết cấu mềm mại, tan trong miệng cùng vị ngọt thanh. Nếu bạn mới ghé tiệm lần đầu, hãy thử ngay chiếc bánh này!</p>
+        </div>
+      </div>
+      <figure class="image"><img src="images/tiramisu-1.jpg" alt="Tiramisu" /></figure>
+    </article>
+
+    <article class="item active">
+      <div class="main-content" style="background-color:#dab65a;">
+        <div class="content">
+          <h2>Bông lan trứng muối</h2>
+          <p>Bạn hãy thử ngay phiên bản bông lan trứng muối cuộn tại Cát Tường Bakery. Điểm làm nên sự khác biệt của tiệm nằm ở lớp sốt dầu trứng đậm đà và sốt trứng muối hoàng kim được làm theo công thức đặc biệt nhiều trứng muối. Cốt bánh mềm, cuộn chặt tay, quyện cùng vị béo thơm của sốt và trứng muối bùi bùi tạo nên hương vị tổng thể vô cùng gây nghiện.</p>
+        </div>
+      </div>
+      <figure class="image"><img src="images/cover.jpg" alt="Bông lan trứng muối" /></figure>
+    </article>
+
+    <article class="item other_2">
+      <div class="main-content" style="background-color:rgb(216,113,10);">
+        <div class="content">
+          <h2>Bánh kẹp kẹo phô mai</h2>
+          <p>Vua của gian hàng ăn vặt ở Cát Tường là đây. Sự hấp dẫn đến từ lớp vỏ bánh quy giòn tan, kẹp lấy nhân kẹo phô mai dẻo dẻo dai dai cực kỳ thú vị. Vị bánh thiên về vị mằn mặn đặc trưng của phô mai, ăn rất cuốn và không hề bị ngán. Rất thích hợp để nhâm nhi cùng một tách trà.</p>
+        </div>
+      </div>
+      <figure class="image"><img src="images/banhkep.png" alt="Bánh kẹp kẹo phô mai" /></figure>
+    </article>
+
+    <article class="item other_3">
+      <div class="main-content" style="background-color:antiquewhite;">
+        <div class="content">
+          <h2>Pateso</h2>
+          <p>Ăn sáng cùng Pateso! Pateso tại tiệm luôn là lựa chọn hàng đầu nhờ phần nhân thịt xay được trộn với pate đậm đà. Bạn sẽ cảm nhận rõ sự tương phản giữa lớp vỏ bánh ngàn lớp giòn rụm bên ngoài và phần nhân mềm ấm nồng nàn bên trong. Bánh luôn được nướng mới để đảm bảo độ tươi.</p>
+        </div>
+      </div>
+      <figure class="image"><img src="images/pateso.jpg" alt="Pateso" /></figure>
+    </article>
+
+    <article class="item other_4">
+      <div class="main-content" style="background-color:rgb(230,193,94);">
+        <div class="content">
+          <h2>Bánh mì sấy bơ tỏi</h2>
+          <p>Nữ hoàng của bánh ăn vặt tại Cát Tường là đây. Ngay khi mở túi, bạn sẽ bị hấp dẫn bởi hương thơm nức mũi từ bơ tỏi được phết đều trong từng lát bánh. Hương vị mặn ngọt vừa miệng và độ giòn tan sẽ lôi cuốn bạn không thể ngừng ăn thêm miếng tiếp theo!</p>
+        </div>
+      </div>
+      <figure class="image"><img src="images/bmi-botoi-say.jpg" alt="Bánh mì sấy bơ tỏi" /></figure>
+    </article>
+  </div>
+
+  <div class="arrows">
+    <button id="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <button id="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+</section>
+
+<!-- ════════════════════════════════════════════
+     UNIQUE COLLECTION — Infinite Scroll
+════════════════════════════════════════════ -->
+<section class="unique" id="collection">
+  <div class="collection-header">
+    <div class="section-tag">Bộ sưu tập</div>
+    <h2>Những sản phẩm độc đáo nhà Cát Tường</h2>
+  </div>
+  <div class="scroll">
+    <div class="list">
+      <div class="uni" style="--position:1" ><img src="images/che.jpg"               alt="Chè" /></div>
+      <div class="uni" style="--position:2" ><img src="images/tiramisu vn.jpg"        alt="Tiramisu VN" /></div>
+      <div class="uni" style="--position:3" ><img src="images/travien2.jpg"        alt="Trà hoa cúc" /></div>
+      <div class="uni" style="--position:4" ><img src="images/mochi.jpg"              alt="Mochi" /></div>
+      <div class="uni" style="--position:5" ><img src="images/banh-dua.jpg"           alt="Bánh dứa" /></div>
+      <div class="uni" style="--position:6" ><img src="images/banh-afc.jpg"           alt="Bánh AFC" /></div>
+      <div class="uni" style="--position:7" ><img src="images/limepie.jpg"            alt="Lime pie" /></div>
+      <div class="uni" style="--position:8" ><img src="images/nougat.jpg"             alt="Nougat" /></div>
+      <div class="uni" style="--position:9" ><img src="images/mini-cupcake.jpg"       alt="Mini cupcake" /></div>
+      <div class="uni" style="--position:10"><img src="images/croissant-phomai.jpg"  alt="Croissant phô mai" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     ORDERING
+════════════════════════════════════════════ -->
+<section class="order" id="ordering">
+  <div class="mascot">
+    <img src="images/mas.png" alt="Mascot Cát Tường" />
+  </div>
+  <div class="order-content">
+    <div class="section-tag dark">Hướng dẫn đặt hàng</div>
+    <h2>Lưu ý khi đặt hàng<br>tại Cát Tường Bakery</h2>
+    <div class="attention-box">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>Đặt trước tối thiểu từ 2 đến 24 giờ!</span>
+    </div>
+    <p class="order-note-text">Tiệm chỉ làm bánh khi có đơn để đảm bảo độ tươi và chất lượng tốt nhất.</p>
+    <div class="order-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-desc"><strong>Liên hệ đặt bánh</strong><br>Nhắn tin hoặc gọi Hotline / Facebook / Zalo.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-desc"><strong>Chọn sản phẩm</strong><br>Chọn loại bánh, số lượng và yêu cầu riêng.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-desc"><strong>Xác nhận &amp; thanh toán</strong><br>Tiệm xác nhận đơn, thời gian, địa điểm nhận và phương thức thanh toán.</div>
+      </div>
+    </div>
+    <div class="order-cta">
+      <a href="https://zalo.me/0785266428" class="btn btn-outline-dark" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook"></i>&nbsp;Nhắn tin Zalo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Cát Tường</div>
+      <span class="footer-script">Homemade Bakery</span>
+      <p>Làm bánh bằng cả trái tim — mỗi chiếc bánh là một câu chuyện của tình yêu và sự tỉ mỉ.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Liên hệ</h5>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Chung cư Him Lam Nam Sài Gòn, đường số 14, TP. Hồ Chí Minh</span>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:0785266428">0785266428</a>
+      </div>
+      <div class="footer-contact-item">
+        <i class="fa-regular fa-clock"></i>
+        <span>7:00 am – 9:00 pm · Thứ 2 – Chủ nhật</span>
+      </div>
+      <div class="social-row">
+        <a href="https://www.facebook.com/bakerycattuong" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-btn" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+        <a href="#" class="social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Cát Tường Bakery. Làm bằng <i class="fa-solid fa-heart" style="color:#dab65a"></i> tại Việt Nam.</span>
+  </div>
+</footer>
+
+<script>
+/* ── Mobile nav toggle ── */
+document.getElementById('navToggle').addEventListener('click', function () {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.categories a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+/* ════════════════════════════════════════════
+   HÔM NAY ĂN GÌ? — slot-machine picker
+════════════════════════════════════════════ */
+var foods = [
+  { name: 'Bánh mì mềm',        emoji: '🍞' },
+  { name: 'Bông lan trứng muối', emoji: '🥚' },
+  { name: 'Pateso',              emoji: '🥐' },
+  { name: 'Bánh tart trứng',     emoji: '🥧' },
+  { name: 'Su kem',              emoji: '🍮' },
+  { name: 'Bánh flan',           emoji: '🍮' },
+  { name: 'Rau câu',             emoji: '🟢' },
+  { name: 'Tiramisu',            emoji: '☕' }
+];
+var isSpinning = false;
+
+function pickFood() {
+  if (isSpinning) return;
+  isSpinning = true;
+
+  var btn      = document.getElementById('pickerBtn');
+  var display  = document.getElementById('pickerDisplay');
+  var resultEl = document.getElementById('pickerResult');
+  var emojiEl  = document.getElementById('pickerEmoji');
+
+  btn.disabled = true;
+  btn.classList.add('spinning');
+  display.classList.remove('picked');
+  display.classList.add('rolling');
+
+  var cycles = 0;
+  var maxCycles = 20;
+  var delay = 80;
+
+  function tick() {
+    var rand = foods[Math.floor(Math.random() * foods.length)];
+    emojiEl.textContent  = rand.emoji;
+    resultEl.textContent = rand.name;
+    cycles++;
+
+    if (cycles >= maxCycles) {
+      /* Final answer */
+      var final = foods[Math.floor(Math.random() * foods.length)];
+      emojiEl.textContent  = final.emoji;
+      resultEl.textContent = final.name;
+      display.classList.remove('rolling');
+      display.classList.add('picked');
+      document.querySelectorAll('.picker-pill').forEach(function (p) {
+        p.classList.toggle('active', p.textContent.trim() === final.name);
+      });
+      btn.disabled = false;
+      btn.classList.remove('spinning');
+      isSpinning = false;
+    } else {
+      /* Speed ramps down after cycle 14 */
+      delay = cycles > 14 ? delay + 18 : 80;
+      setTimeout(tick, delay);
+    }
+  }
+  tick();
+}
+
+function selectFood(name, emoji) {
+  if (isSpinning) return;
+  var display  = document.getElementById('pickerDisplay');
+  document.getElementById('pickerResult').textContent = name;
+  document.getElementById('pickerEmoji').textContent  = emoji;
+  display.classList.remove('rolling');
+  display.classList.add('picked');
+  document.querySelectorAll('.picker-pill').forEach(function (p) {
+    p.classList.toggle('active', p.textContent.trim() === name);
+  });
+}
+
+/* ════════════════════════════════════════════
+   CAROUSEL
+════════════════════════════════════════════ */
+(function () {
+  var prevBtn  = document.getElementById('prev');
+  var nextBtn  = document.getElementById('next');
+  var carousel = document.querySelector('.bestseller');
+  var items    = Array.from(document.querySelectorAll('.bestseller .item'));
+  var count    = items.length;
+  var active   = 1;
+
+  function mod(n) { return ((n % count) + count) % count; }
+
+  function clearClasses() {
+    items.forEach(function (el) {
+      el.classList.remove('active','other_1','other_2','other_3','other_4');
+    });
+  }
+
+  function resetAnimations() {
+    items.forEach(function (el) {
+      var img = el.querySelector('.image img');
+      if (img) img.style.animation = 'none';
+    });
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        items.forEach(function (el) {
+          var img = el.querySelector('.image img');
+          if (img) img.style.animation = '';
+        });
+      });
+    });
+  }
+
+  function applyState() {
+    items[active].classList.add('active');
+    items[mod(active-1)].classList.add('other_1');
+    items[mod(active+1)].classList.add('other_2');
+    items[mod(active+2)].classList.add('other_3');
+    items[mod(active+3)].classList.add('other_4');
+    resetAnimations();
+  }
+
+  nextBtn.addEventListener('click', function () {
+    carousel.classList.remove('previous');
+    carousel.classList.add('next');
+    clearClasses(); active = mod(active+1); applyState();
+  });
+  prevBtn.addEventListener('click', function () {
+    carousel.classList.remove('next');
+    carousel.classList.add('previous');
+    clearClasses(); active = mod(active-1); applyState();
+  });
+}());
+</script>
+
+</body>
+</html>

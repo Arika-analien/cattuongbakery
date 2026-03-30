@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sắp ra mắt — Cát Tường Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Glory:wght@400;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b97b4520c7.js" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-dark: #543304;
+      --brown-mid:  #975B09;
+      --gold:       #dab65a;
+      --gold-deep:  #d2a941;
+      --cream:      #FDF8F0;
+      --parchment:  #F9F3E8;
+    }
+
+    body {
+      font-family: 'Glory', sans-serif;
+      background: var(--parchment);
+      color: var(--brown-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header (same as main site) ── */
+    header {
+      background: var(--brown-mid);
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-link {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .logo-link span {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-family: 'Glory', sans-serif;
+      font-size: .88rem;
+      font-weight: 700;
+      padding: .55rem 1.3rem;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 3px 12px rgba(210,169,65,.35);
+    }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(210,169,65,.5); }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Decorative bakery illustration */
+    .cs-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: gentleBob 3s ease-in-out infinite;
+      filter: drop-shadow(0 6px 18px rgba(84,51,4,.15));
+    }
+    @keyframes gentleBob {
+      0%,100% { transform: translateY(0) rotate(-3deg); }
+      50%      { transform: translateY(-10px) rotate(3deg); }
+    }
+
+    .cs-eyebrow {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      color: var(--gold-deep);
+      margin-bottom: .6rem;
+    }
+
+    .cs-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--brown-dark);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .cs-title em { font-style: italic; color: var(--brown-mid); }
+
+    /* Animated dots divider */
+    .cs-dots {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      margin: 1.4rem 0;
+    }
+    .cs-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: dotPulse 1.4s ease-in-out infinite;
+    }
+    .cs-dots span:nth-child(2) { animation-delay: .2s; }
+    .cs-dots span:nth-child(3) { animation-delay: .4s; }
+    @keyframes dotPulse {
+      0%,100% { transform: scale(1); opacity: .5; }
+      50%      { transform: scale(1.5); opacity: 1; }
+    }
+
+    .cs-desc {
+      font-size: clamp(.95rem, 2vw, 1.1rem);
+      color: var(--brown-mid);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Countdown section */
+    .cs-notify {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(218,182,90,.18);
+      border: 1px solid rgba(218,182,90,.5);
+      border-radius: 99px;
+      padding: .7rem 1.6rem;
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--brown-dark);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Decorative card */
+    .cs-card {
+      background: #fff;
+      border: 1px solid rgba(218,182,90,.25);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 8px 36px rgba(84,51,4,.08);
+      margin-bottom: 2.5rem;
+    }
+    .cs-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 1rem;
+    }
+    .cs-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      text-align: left;
+    }
+    .cs-card ul li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .93rem;
+      color: var(--brown-mid);
+    }
+    .cs-card ul li i { color: var(--gold-deep); width: 16px; }
+
+    /* Social links */
+    .cs-social {
+      display: flex;
+      gap: .8rem;
+      justify-content: center;
+    }
+    .cs-social-btn {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--brown-dark);
+      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+    .cs-social-btn:hover { transform: translateY(-3px); background: var(--brown-mid); }
+
+    /* Footer strip */
+    footer {
+      background: var(--brown-dark);
+      color: rgba(255,255,255,.45);
+      text-align: center;
+      padding: 1rem;
+      font-size: .8rem;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ── Page-type badge (passed via URL param) ── */
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: .8rem;
+    }
+    .page-badge::before, .page-badge::after {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+
+    @media (max-width: 480px) {
+      .cs-title { font-size: 2rem; }
+      .cs-card { padding: 1.8rem 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo-link">
+    Cát Tường <span>Bakery</span>
+  </a>
+  <a href="../index.html" class="back-btn">
+    <i class="fa-solid fa-arrow-left"></i> Về trang chủ
+  </a>
+</header>
+
+<main>
+  <div class="cs-icon" id="pageIcon">🎂</div>
+
+  <div class="page-badge" id="pageBadge">Tin tức</div>
+
+  <p class="cs-eyebrow">Coming soon...</p>
+
+  <h1 class="cs-title">Sắp ra mắt<br></h1>
+
+  <div class="cs-dots"><span></span><span></span><span></span></div>
+
+  <p class="cs-desc" id="pageDesc">
+    Trang này đang được chuẩn bị...
+    Hãy theo dõi Facebook của tiệm để không bỏ lỡ tin tức mới nhất nhé!
+  </p>
+
+
+  <div class="cs-card" id="pageCard">
+    <h3>Trong thời gian chờ đợi...</h3>
+    <ul>
+      <li><i class="fa-solid fa-check"></i> Ghé xem sản phẩm hiện có của tiệm</li>
+      <li><i class="fa-solid fa-check"></i> Nhắn tin đặt bánh qua Facebook</li>
+      <li><i class="fa-solid fa-check"></i> Gọi Hotline: 0785266428</li>
+      <li><i class="fa-solid fa-check"></i> Theo dõi tiệm trên mạng xã hội</li>
+    </ul>
+  </div>
+
+  <div class="cs-social">
+    <a href="https://www.facebook.com/bakerycattuong" class="cs-social-btn" target="_blank" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <span>© 2024 <strong>Cát Tường Bakery</strong> · Làm bằng <i class="fa-solid fa-heart" style="color:#dab65a"></i> tại Việt Nam.</span>
+</footer>
+
+<script>
+  /* Read ?page=tintuc or ?page=quatang from URL and customise content */
+  var params = new URLSearchParams(window.location.search);
+  var page   = params.get('page');
+
+  if (page === 'quatang') {
+    document.getElementById('pageIcon').textContent  = '🎁';
+    document.getElementById('pageBadge').textContent = 'Quà tặng';
+    document.getElementById('pageDesc').textContent  =
+      'Chúng tôi đang chuẩn bị những quà tặng xinh xắn và ý nghĩa. ' +
+      'Theo dõi tiệm để được biết ngay khi bộ sưu tập quà tặng ra mắt!';
+  }
+</script>
+</body>
+</html>

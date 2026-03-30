@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm — Cát Tường Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,700&family=Glory:wght@400;600;700;800&family=Dancing+Script:wght@600&family=Playwrite+HU:wght@300&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b97b4520c7.js" crossorigin="anonymous"></script>
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="../style.css" />
+  <!-- Product page styles (separated) -->
+  <link rel="stylesheet" href="product-page.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     HEADER  (unchanged)
+══════════════════════════════════════════════════════════ -->
+<header>
+  <div class="top-bar">
+    <div class="phonenumber"><i class="fa-solid fa-cookie"></i><p>Hotline: 0785266428</p></div>
+    <div class="logo"><img src="../images/cat_tuong_logo-removebg.png" alt="Cát Tường Bakery" /></div>
+    <div class="social-media">
+      <a href="https://www.facebook.com/bakerycattuong"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-threads"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+  <nav>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="categories" id="navLinks">
+      <li><a href="../index.html#about">About us</a></li>
+      <li><a href="product_test_.html" style="color:var(--gold)">Sản phẩm</a></li>
+      <li><a href="coming-soon.html?page=tintuc">Blog</a></li>
+      <li><a href="coming-soon.html?page=quatang">Quà tặng</a></li>
+      <li><a href="../index.html#footer">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<div class="product-hero">
+  <h1>Các sản phẩm <em>nhà Cát Tường</em></h1>
+  <p>Tất cả được làm tươi mỗi ngày </p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MAIN LAYOUT  (sidebar + product list)
+══════════════════════════════════════════════════════════ -->
+<div class="product-layout">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <button class="cat-mobile-toggle" id="catMobileToggle">
+      <span><i class="fa-solid fa-filter"></i> &nbsp;Lọc danh mục</span>
+      <i class="fa-solid fa-chevron-down" id="catChevron"></i>
+    </button>
+    <div class="cat-sidebar" id="catSidebar">
+      <h3><i class="fa-solid fa-layer-group"></i> &nbsp;Danh mục</h3>
+      <ul class="cat-list" id="catList"></ul>
+    </div>
+  </aside>
+
+  <!-- ── Product list column ── -->
+  <div>
+    <div class="product-count" id="productCount"></div>
+
+    <!-- ══════════════════════════════════════════════════════
+         PRODUCT LIST
+         ──────────────────────────────────────────────────────
+         HOW TO ADD A PRODUCT:
+           1. Copy the block between START PRODUCT / END PRODUCT
+           2. Paste it inside .product-list below
+           3. Fill every ← EDIT HERE placeholder
+
+         data-* attributes drive the detail lightbox.
+         data-description  → bullet points separated by  |
+         data-images       → filenames separated by  ,  (first = thumbnail)
+         data-category     → must match an id in the cats[] JS array
+    ══════════════════════════════════════════════════════ -->
+    <div class="product-list" id="productList">
+
+
+      <!-- ─────────────────────────────────────────────────────
+           ❶ START PRODUCT
+           ───────────────────────────────────────────────────── -->
+      <div class="product-row"
+           data-category="BDcake"
+           data-name="Bánh kem tươi"
+           data-filling="Bánh có các loại nhân mứt, nhân bắp, nhân bắp phô mai theo tùy yêu cầu của khách."
+           data-description-title="Điểm đặc biệt của bánh hoa sen trắng:"
+           data-description="Thiết kế hoa sen nổi 3D, tạo hình bằng tay tỉ mỉ|Tone trắng – kem – vàng nhạt nhẹ nhàng, sang trọng|Thích hợp cho những dịp cần sự trang nghiêm như tặng đám giỗ, tặng sư thầy, sư cô"
+           data-images=" ../images/capybara.jpg, ../images/sn-3.jpg, ../images/sn-5.jpg,../images/sn-16.jpg, ../images/sn-4.jpg, ../images/sn-6.jpg, ../images/thoivang.jpg, ../images/sn-giangsinh1.jpg, ../images/sn-giangsinh2.jpg, ../images/sn-giangsinh.jpg, ../images/giangsinhsn-3.jpg, ../images/sn-15.jpg"
+           onclick="openProductLB(this)">
+        <!-- ← EDIT data-category         : ID danh mục (phải trùng với cats[] trong JS) -->
+        <!-- ← EDIT data-name             : Tên sản phẩm                                 -->
+        <!-- ← EDIT data-filling          : Ghi chú nhân bánh                            -->
+        <!-- ← EDIT data-description-title: Tiêu đề phần mô tả                          -->
+        <!-- ← EDIT data-description      : Mô tả, các dòng cách nhau bằng |            -->
+        <!-- ← EDIT data-images           : Tên file ảnh, cách nhau bằng , (đầu tiên = thumbnail) -->
+
+        <div class="product-row-img-wrap">
+          <img src="../images/sn-5.jpg" alt="Bánh kem sinh nhật" loading="lazy"> 
+          <!-- ← EDIT src: ảnh đại diện (thường là ảnh đầu tiên trong data-images) -->
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Bánh kem tươi</div>
+          <!-- ← EDIT: tên sản phẩm -->
+          <div class="product-row-sub">Nhân mứt, nhân bắp, bắp phô mai · Làm theo đặt hàng</div>
+          <!-- ← EDIT: dòng phụ ngắn (danh mục, ghi chú, v.v.) -->
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+      <!-- END PRODUCT ───────────────────────────────────────── -->
+
+
+      <!-- ─────────────────────────────────────────────────────
+           ❷ START PRODUCT
+           ───────────────────────────────────────────────────── -->
+      <div class="product-row"
+           data-category="BDcake"
+           data-name="Bánh rau câu"
+           data-filling="nhân flan"
+           data-description-title="Điểm đặc biệt của Tiramisu:"
+           data-description="Công thức Ý truyền thống, điều chỉnh vị cho phù hợp khẩu vị Việt|Lớp kem nhẹ tan ngay trong miệng|Rắc bột cacao Valrhona nguyên chất"
+           data-images="../images/sn-raucau.jpg, ../images/sn-raucau1.jpg, ../images/sn-raucau2.jpg, ../images/sn-raucau4.jpg, ../images/sn-raucau3.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="../images/sn-raucau.jpg" alt="Rau câu sầu riêng" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Bánh rau câu</div>
+          <div class="product-row-sub">nhân flan · Làm theo yêu cầu</div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+      <!-- END PRODUCT ───────────────────────────────────────── -->
+
+
+      <!-- ─────────────────────────────────────────────────────
+           ❸ START PRODUCT
+           ───────────────────────────────────────────────────── -->
+      <div class="product-row"
+           data-category="BDcake"
+           data-name="Bánh Bông Lan Trứng Muối"
+           data-filling="Nhân trứng muối chảy, phủ muối hoa"
+           data-description-title="Điểm đặc biệt của Bông Lan Trứng Muối:"
+           data-description="Trứng muối nguyên chất, không màu nhân tạo|Vỏ bánh bông xốp, màu vàng đẹp tự nhiên|Thích hợp làm quà biếu"
+           data-images="../images/sn-1.jpg, ../images/sn-11.jpg, ../images/sn-12.jpg, ../images/sn-13.jpg, ../images/sn-tm.jpg, ../images/sn-tm2.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="../images/sn-1.jpg" alt="Bông Lan Trứng Muối" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Bánh Bông Lan Trứng Muối</div>
+          <div class="product-row-sub">Bông lan trứng muối · Làm theo yêu cầu </div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+      <!-- END PRODUCT ───────────────────────────────────────── -->
+
+      <!--Start-->
+      <div class="product-row"
+           data-category="BDcake"
+           data-name="Bánh Tiramisu"
+           data-filling="Nhân trứng muối chảy, phủ muối hoa"
+           data-description-title="Điểm đặc biệt của Bông Lan Trứng Muối:"
+           data-description="Trứng muối nguyên chất, không màu nhân tạo|Vỏ bánh bông xốp, màu vàng đẹp tự nhiên|Thích hợp làm quà biếu"
+           data-images="../images/sn-tira.jpg, ../images/sn-tira2.jpg, ../images/sn-2.jpg,  ../images/sn-7.jpg, ../images/sn-9.jpg, ../images/sn-10.jpg, ../images/sn-14.jpg, ../images/sn-dau1.jpg, ../images/sn-dau2.jpg, ../images/sn-tira3.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="../images/sn-tira.jpg" alt="Bông Lan Trứng Muối" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Bánh Tiramisu</div>
+          <div class="product-row-sub">tiramisu / mouse / cheesecake · Làm theo yêu cầu </div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+
+      <!--end-->
+      <!-- start-->
+      <div class="product-row"
+           data-category="TET"
+           data-name="Hạnh nhân lát"
+           data-filling="Nhân trứng muối chảy, phủ muối hoa"
+           data-description-title="Điểm đặc biệt của Bông Lan Trứng Muối:"
+           data-description="Trứng muối nguyên chất, không màu nhân tạo|Vỏ bánh bông xốp, màu vàng đẹp tự nhiên|Thích hợp làm quà biếu"
+           data-images="../images/hanhnhan-1.jpg, ../images/hanhnhan.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="../images/hanhnhan-1.jpg" alt="Bông Lan Trứng Muối" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Hạnh nhân lát</div>
+          <div class="product-row-sub"> Làm theo đơn hàng </div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+
+<!-- end-->
+      <!-- start-->
+      <div class="product-row"
+           data-category="TET"
+           data-name="Bánh dứa"
+           data-filling="Nhân trứng muối chảy, phủ muối hoa"
+           data-description-title="Điểm đặc biệt của Bông Lan Trứng Muối:"
+           data-description="Trứng muối nguyên chất, không màu nhân tạo|Vỏ bánh bông xốp, màu vàng đẹp tự nhiên|Thích hợp làm quà biếu"
+           data-images="../images/banhdua-2.jpg, ../images/banh-dua.jpg, ../images/banhdua-1.jpg, ../images/banhdua-thoivang1.jpg, ../images/banhdua-thoivang2.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="../images/banhdua-2.jpg" alt="Bông Lan Trứng Muối" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">Bánh dứa</div>
+          <div class="product-row-sub"> bánh dứa mini / thỏi vàng · Làm theo đơn hàng </div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+
+<!-- end-->
+
+
+
+
+
+
+      <!-- 
+      ════════════════════════════════════════════════════════
+      BLANK TEMPLATE — copy from here to add a new product
+      ════════════════════════════════════════════════════════
+
+      <div class="product-row"
+           data-category="← CATEGORY ID"
+           data-name="← TÊN SẢN PHẨM"
+           data-filling="← GHI CHÚ NHÂN BÁNH"
+           data-description-title="← TIÊU ĐỀ MÔ TẢ"
+           data-description="← DÒNG 1|DÒNG 2|DÒNG 3"
+           data-images="← anh1.jpg,anh2.jpg,anh3.jpg"
+           onclick="openProductLB(this)">
+
+        <div class="product-row-img-wrap">
+          <img src="← anh1.jpg" alt="← TÊN SẢN PHẨM" loading="lazy"
+               onerror="this.src='https://placehold.co/300x400/f0e8d5/3a2005?text=Ảnh+sản+phẩm'" />
+        </div>
+
+        <div class="product-row-info">
+          <div class="product-row-name">← TÊN SẢN PHẨM</div>
+          <div class="product-row-sub">← Danh mục · Ghi chú ngắn</div>
+        </div>
+
+        <div class="product-row-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+      -->
+
+    </div><!-- /product-list -->
+
+    <div class="empty-cat" id="emptyProduct" style="display:none">
+      <i class="fa-solid fa-image"></i>
+      <p>Chưa có sản phẩm trong danh mục này.</p>
+    </div>
+
+  </div><!-- /content column -->
+
+</div><!-- /product-layout -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     PRODUCT DETAIL LIGHTBOX
+     Populated dynamically by JS.
+     Do not edit inner content — edit data-* on .product-row instead.
+══════════════════════════════════════════════════════════ -->
+<div class="pdlb" id="pdlb">
+  <div class="pdlb-card" id="pdlbCard">
+
+    <button class="pdlb-close" onclick="closeProductLB()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- TOP: gallery (left) + info (right) -->
+    <div class="pdlb-top">
+
+      <!-- Gallery -->
+      <div class="pdlb-gallery">
+        <div class="pdlb-main-img-wrap">
+          <img id="pdlbMainImg" src="" alt="" />
+          <button class="pdlb-img-nav pdlb-img-prev" onclick="navPdlbImg(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="pdlb-img-nav pdlb-img-next" onclick="navPdlbImg(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="pdlb-thumbs" id="pdlbThumbs"></div>
+      </div>
+
+      <!-- Info — price / size / khuôn / SKU intentionally omitted -->
+      <div class="pdlb-info">
+        <span class="pdlb-category-tag" id="pdlbCatTag"></span>
+        <h2 class="pdlb-product-name" id="pdlbName"></h2>
+        <div class="pdlb-filling-note" id="pdlbFilling"></div>
+      </div>
+
+    </div><!-- /pdlb-top -->
+
+    <!-- BOTTOM: product information (scroll to see) -->
+    <div class="pdlb-detail">
+      <div class="pdlb-detail-tab-header">THÔNG TIN SẢN PHẨM</div>
+      <div class="pdlb-detail-section-title">TRANG TRÍ:</div>
+      <div class="pdlb-detail-body">
+        <strong id="pdlbDescTitle"></strong>
+        <ul id="pdlbDescList" style="margin-top:.5rem"></ul>
+      </div>
+      <img id="pdlbDetailImg" class="pdlb-detail-img" src="" alt="" />
+    </div>
+
+  </div><!-- /pdlb-card -->
+</div><!-- /pdlb -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER  (unchanged)
+══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Cát Tường</div>
+      <span class="footer-script">Homemade Bakery</span>
+      <p>Làm bánh bằng cả trái tim.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Liên hệ</h5>
+      <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:0785266428">0785266428</a></div>
+      <div class="social-row">
+        <a href="https://www.facebook.com/bakerycattuong" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 Cát Tường Bakery</div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+     To move to a separate file, cut everything inside <script>
+     and save as  product-page.js, then replace this tag with:
+       <script src="product-page.js"></script>
+══════════════════════════════════════════════════════════ -->
+<script>
+/* ─── Category data ───────────────────────────────────────
+   id must match data-category on each .product-row above.
+   ─────────────────────────────────────────────────────── */
+var cats = [
+  { id:'all',      label:'Tất cả' },
+  { id:'BDcake',     label:'Bánh sinh nhật'},
+  { id:'TET',     label:'Bánh Tết' },
+  { id:'banhmi',   label:'Bánh mì'},
+  { id:'special',   label:'Sản phẩm ngày thờ cúng / khai trương'},
+];
+
+var activeCat = 'all';
+
+function getCatCount(id) {
+  var rows = document.querySelectorAll('.product-row');
+  if (id === 'all') return rows.length;
+  var n = 0;
+  rows.forEach(function(r){ if (r.dataset.category === id) n++; });
+  return n;
+}
+
+function buildSidebar() {
+  document.getElementById('catList').innerHTML = cats.map(function(c) {
+    return '<li><button onclick="selCat(\'' + c.id + '\')" ' +
+      (c.id === activeCat ? 'class="active"' : '') + '>' + c.label +
+      '<span class="cat-count">' + getCatCount(c.id) + '</span>' +
+      '</button></li>';
+  }).join('');
+}
+
+function selCat(id) {
+  activeCat = id;
+  buildSidebar();
+  filterProducts();
+  document.getElementById('catSidebar').classList.remove('open');
+  document.getElementById('catChevron').className = 'fa-solid fa-chevron-down';
+}
+
+function filterProducts() {
+  var rows = document.querySelectorAll('.product-row');
+  var visible = 0;
+  rows.forEach(function(r) {
+    var show = activeCat === 'all' || r.dataset.category === activeCat;
+    r.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  document.getElementById('productCount').textContent = 'Hiển thị ' + visible + ' sản phẩm';
+  document.getElementById('emptyProduct').style.display = visible === 0 ? 'block' : 'none';
+}
+
+/* ─── Product detail lightbox ────────────────────────────── */
+var pdlbImages = [], pdlbIdx = 0;
+
+function openProductLB(el) {
+  var name      = el.dataset.name || '';
+  var filling   = el.dataset.filling || '';
+  var descTitle = el.dataset.descriptionTitle || '';
+  var descRaw   = el.dataset.description || '';
+  var imgsRaw   = el.dataset.images || '';
+  var catId     = el.dataset.category || '';
+
+  var catObj   = cats.find(function(c){ return c.id === catId; });
+  var catLabel = catObj ? catObj.label: catId;
+
+  pdlbImages = imgsRaw.split(',').map(function(s){ return s.trim(); }).filter(Boolean);
+  pdlbIdx    = 0;
+
+  document.getElementById('pdlbCatTag').textContent  = catLabel;
+  document.getElementById('pdlbName').textContent    = name;
+  document.getElementById('pdlbFilling').textContent = filling;
+
+  document.getElementById('pdlbDescTitle').textContent = descTitle;
+  document.getElementById('pdlbDescList').innerHTML = descRaw.split('|')
+    .filter(Boolean)
+    .map(function(l){ return '<li>' + l.trim() + '</li>'; })
+    .join('');
+
+  renderPdlbImages();
+  document.getElementById('pdlb').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderPdlbImages() {
+  var mainImg   = document.getElementById('pdlbMainImg');
+  var thumbsEl  = document.getElementById('pdlbThumbs');
+  var detailImg = document.getElementById('pdlbDetailImg');
+
+  mainImg.src = pdlbImages[pdlbIdx] || '';
+  mainImg.onerror = function(){ this.src = 'https://placehold.co/600x600/f0e8d5/3a2005?text=Ảnh+sản+phẩm'; };
+
+  detailImg.src = pdlbImages[0] || '';
+  detailImg.onerror = function(){ this.src = 'https://placehold.co/800x500/f0e8d5/3a2005?text=Ảnh+chi+tiết'; };
+
+  thumbsEl.innerHTML = pdlbImages.map(function(img, i){
+    return '<div class="pdlb-thumb' + (i === pdlbIdx ? ' active' : '') + '" onclick="setThumb(' + i + ')">' +
+      '<img src="' + img + '" alt="" onerror="this.src=\'https://placehold.co/60x60/f0e8d5/3a2005?text=?\'" />' +
+    '</div>';
+  }).join('');
+}
+
+function setThumb(i) {
+  pdlbIdx = i;
+  document.getElementById('pdlbMainImg').src = pdlbImages[i];
+  document.querySelectorAll('.pdlb-thumb').forEach(function(t, idx){
+    t.classList.toggle('active', idx === i);
+  });
+}
+
+function navPdlbImg(dir) {
+  pdlbIdx = ((pdlbIdx + dir) % pdlbImages.length + pdlbImages.length) % pdlbImages.length;
+  document.getElementById('pdlbMainImg').src = pdlbImages[pdlbIdx];
+  document.querySelectorAll('.pdlb-thumb').forEach(function(t, i){
+    t.classList.toggle('active', i === pdlbIdx);
+  });
+}
+
+function closeProductLB() {
+  document.getElementById('pdlb').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('pdlb').addEventListener('click', function(e){
+  if (e.target === this) closeProductLB();
+});
+
+document.addEventListener('keydown', function(e){
+  if (!document.getElementById('pdlb').classList.contains('active')) return;
+  if (e.key === 'Escape')     closeProductLB();
+  if (e.key === 'ArrowLeft')  navPdlbImg(-1);
+  if (e.key === 'ArrowRight') navPdlbImg(1);
+});
+
+/* ─── Sidebar mobile toggle ─────────────────────────────── */
+document.getElementById('catMobileToggle').addEventListener('click', function(){
+  var s  = document.getElementById('catSidebar');
+  var ic = document.getElementById('catChevron');
+  s.classList.toggle('open');
+  ic.className = s.classList.contains('open') ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
+});
+
+/* ─── Nav toggle ────────────────────────────────────────── */
+document.getElementById('navToggle').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.categories a').forEach(function(a){
+  a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+});
+
+/* ─── Init ──────────────────────────────────────────────── */
+buildSidebar();
+filterProducts();
+</script>
+</body>
+</html>
