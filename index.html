@@ -26,7 +26,6 @@
     </div>
     <div class="social-media">
       <a href="https://www.facebook.com/bakerycattuong" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
       <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
     </div>
   </div>
@@ -268,7 +267,6 @@
       </div>
       <div class="social-row">
         <a href="https://www.facebook.com/bakerycattuong" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-btn" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
         <a href="#" class="social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
     </div>
@@ -406,14 +404,20 @@ function selectFood(name, emoji) {
   }
 
   nextBtn.addEventListener('click', function () {
-    carousel.classList.remove('previous');
+    carousel.classList.remove('prev');
     carousel.classList.add('next');
     clearClasses(); active = mod(active+1); applyState();
   });
   prevBtn.addEventListener('click', function () {
     carousel.classList.remove('next');
-    carousel.classList.add('previous');
-    clearClasses(); active = mod(active-1); applyState();
+    carousel.classList.add('prev');           /* FIX: was 'previous', CSS expects 'prev' */
+    clearClasses(); active = mod(active-1);
+    items[active].classList.add('active');
+    items[mod(active+1)].classList.add('other_1');
+    items[mod(active+2)].classList.add('other_2');
+    items[mod(active-1)].classList.add('other_3');
+    items[mod(active-2)].classList.add('other_4');
+    resetAnimations();
   });
 }());
 </script>

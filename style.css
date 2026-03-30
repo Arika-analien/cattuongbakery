@@ -736,10 +736,12 @@ footer { background: #1f2d58; padding: 4rem 2rem 0; }
   .categories.open { display: flex; }
   .categories li a { padding: 14px 24px; display: block; }
 
-  /* ── Top bar: hide phone text, keep icon ── */
-  .phonenumber p { display: none; }
-  .top-bar { padding: 0 16px; }
-  .logo img { width: 90px; height: 90px; margin-top: -20px; }
+  /* ── Top bar ── */
+  .phonenumber p { display: block; font-size: .78rem; }
+  .top-bar { padding: 0 12px; height: 60px; overflow: visible; }
+  .social-media { gap: 10px; }
+  .social-media a, .social-media i { font-size: 1.05rem; }
+  .logo img { width: 84px; height: 84px; margin-top: -16px; }
 
   /* ── Hero ── */
   .slogan { height: 85vh; }
@@ -767,14 +769,55 @@ footer { background: #1f2d58; padding: 4rem 2rem 0; }
   .food-picker { padding: 3rem 1.2rem; }
   .picker-display { padding: 1.5rem 1rem; }
 
-  /* ── Carousel ── */
-  .bestseller { height: auto; min-height: 100vh; }
-  :root { --w-image: 240px; }
-  .bestseller .list .item .main-content .content { padding: 70px 14px 14px 20px; }
-  .bestseller .list .item .main-content .content h2 { font-size: 1.8rem; }
-  .bestseller .list .item .main-content .content p  { font-size: .88rem; margin: 16px 0; }
-  .arrows { left: 20px; bottom: 20px; }
-  .arrows button { width: 42px; height: 42px; }
+  /* ── Carousel: CHANGE 4 — full responsive stack on phone ── */
+  .bestseller { height: auto; min-height: unset; }
+  :root { --w-image: 0px; }
+
+  /* Stack image on top, content below */
+  .bestseller .list .item {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    height: auto;
+  }
+  .bestseller .list .item.active { display: flex; z-index: 2; }
+  .bestseller .list .item.other_1,
+  .bestseller .list .item.other_2,
+  .bestseller .list .item.other_3,
+  .bestseller .list .item.other_4 { display: none; }
+
+  .bestseller .list .item .image {
+    position: relative;
+    width: 100%; height: 260px;
+    left: unset; top: unset;
+    justify-content: center;
+    align-items: center;
+  }
+  .bestseller .list .item .image img {
+    width: 80%; max-width: 260px;
+    margin-bottom: 0;
+    border-radius: 12px;
+  }
+
+  .bestseller .list .item .main-content {
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+  }
+  .bestseller .list .item .main-content .content {
+    padding: 20px 20px 80px 20px;
+  }
+  .bestseller .list .item .main-content .content h2 { font-size: 2rem; }
+  .bestseller .list .item .main-content .content p  { font-size: .9rem; margin: 14px 0; max-width: 100%; }
+
+  /* Keep animations off on mobile to avoid glitches */
+  .bestseller .list .item .image img { animation: none !important; }
+  .bestseller .list .item.active .main-content { animation: none; clip-path: none; }
+
+  .bestseller .list { height: auto; overflow: visible; }
+  .bestseller-header { position: relative; top: unset; left: unset; transform: none; padding: 1.2rem 1rem 0; white-space: normal; }
+  .arrows { position: relative; left: unset; bottom: unset; justify-content: center; padding: 1rem 0 1.5rem; }
+  .arrows button { width: 42px; height: 42px; border-color: rgba(0,0,0,.3); color: var(--brown-dark); }
 
   /* ── Infinite scroll: smaller tiles on mobile ── */
   :root { --uni-W: 200px; --uni-h: 200px; }
